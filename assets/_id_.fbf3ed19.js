@@ -1,1 +1,0 @@
-import{d as s,L as n,i as r,m as a,I as c,x as i,y as p,t as u,K as _}from"./entry.9a04d0af.js";import{u as m}from"./states.d5f3bc3d.js";const v=s({__name:"[id]",setup(l){const e=n(),o=m().currentJob(e.params.id);return(f,x)=>{const t=r("v-container");return a(),c(t,null,{default:i(()=>[p(" this is inner job page, "+u(_(o)),1)]),_:1})}}});export{v as default};
