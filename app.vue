@@ -15,7 +15,10 @@
           >
             Add
           </VBtn>
-          <VBtn class="mr-2">
+          <VBtn
+            class="mr-2"
+            @click="navigateTo('/list')"
+          >
             List
           </VBtn>
         </VContainer>

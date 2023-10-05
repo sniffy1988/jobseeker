@@ -32,6 +32,9 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>Graph applications creations</v-col>
+    </v-row>
   </v-container>
 </template>
 

@@ -1,4 +1,8 @@
-export const useColor = () => useState<string>('color', () => 'pink')
+import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
 
 // export const useCounterStore = defineStore('counter', {
 //     state: () => ({
@@ -28,8 +32,11 @@ export const useColor = () => useState<string>('color', () => 'pink')
     state: () : {
         jobs: Job[]
     } => ({
-      jobs: [],
+      jobs: []
     }),
+    persist: {
+        debug: true
+    },
     actions: {
       // since we rely on `this`, we cannot use an arrow function
       add(payload:Job) {

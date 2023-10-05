@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module',
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   pinia: {
     autoImports: [
