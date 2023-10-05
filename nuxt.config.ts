@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@vite-pwa/nuxt',
-    '@tailvue/nuxt',
   ],
   pinia: {
     autoImports: [

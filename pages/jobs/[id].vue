@@ -44,9 +44,9 @@
 
 <script setup lang="ts">
 import {ref, unref} from 'vue';
-import { useToast } from 'tailvue'
+import { useToast } from "vue-toastification";
+const toast = useToast();
 
-const $toast = useToast()
 
 const route = useRoute();
 const router = useRouter();
@@ -57,7 +57,7 @@ const newNote = ref('');
 const onDeleteClick = () => {
     store.deleteJob(route.params.id);
     router.push('/jobs');
-    $toast.warning('Deleted job!');
+    toast.warning('Deleted job!');
 }
 
 const onUpdateClick = () => {
@@ -66,7 +66,7 @@ const onUpdateClick = () => {
         note: unref(newNote),
         lastChanged: new Date()
     });
-    $toast.success('Updated job!');
+    toast.success('Updated job!');
     job.value = store.currentJob(route.params.id);
 }
 

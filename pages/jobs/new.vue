@@ -63,9 +63,9 @@
 <script setup lang="ts">
 import { ref, unref, Ref } from 'vue';
 import { uuid } from 'vue-uuid';
-import { useToast } from 'tailvue'
+import { useToast } from "vue-toastification";
+const toast = useToast();
 
-const $toast = useToast()
 
 const name = ref('')
 const url = ref('');
@@ -86,8 +86,8 @@ const statusItems = ['applied', 'screening', 'tech', 'rejected', 'offer'];
 const formRef = ref(null);
 
 const onSubmit = async (event: any) => {
-  const results = await event
-  if (results.valid) {
+  const {valid} = await event;
+  if (valid) {
     store.add({
       id: uuid.v1(),
       name: unref(name),
@@ -101,7 +101,9 @@ const onSubmit = async (event: any) => {
     });
 
     router.push('/');
-    $toast.success('Created job');
+    toast.success("Created job", {
+      timeout: 2000
+    });
   }
 
 }

@@ -12,7 +12,7 @@
           </h2>
           <VBtn
             class="ml-auto mr-2"
-            @click="navigateTo('/jobs/add')"
+            @click="navigateTo('/jobs/new')"
           >
             Add
           </VBtn>

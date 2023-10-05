@@ -1426,7 +1426,7 @@
     which "^3.0.1"
     ws "^8.14.2"
 
-"@nuxt/kit@^3.5.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.2", "@nuxt/kit@^3.7.3", "@nuxt/kit@^3.7.4", "@nuxt/kit@3.7.4", "@nuxt/kit@npm:@nuxt/kit-edge@latest":
+"@nuxt/kit@^3.5.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.2", "@nuxt/kit@^3.7.3", "@nuxt/kit@^3.7.4", "@nuxt/kit@3.7.4":
   version "3.7.4"
   resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.7.4.tgz"
   integrity sha512-/S5abZL62BITCvC/TY3KWA6N721U1Osln3cQdBb56XHIeafZCBVqTi92Xb0o7ovl72mMRhrKwRu7elzvz9oT/g==
@@ -1828,15 +1828,6 @@
     json5 "^2.2.0"
     magic-string "^0.25.0"
     string.prototype.matchall "^4.0.6"
-
-"@tailvue/nuxt@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@tailvue/nuxt/-/nuxt-1.0.0.tgz"
-  integrity sha512-39OV5pfDTF3d8i88Uhxm441lULwlKNm5BEvDDIobCmjOF0ydmC7OCUGCb1TeKNbw9lZ9y0B+UNUsiYKBIEv35w==
-  dependencies:
-    "@nuxt/kit" "npm:@nuxt/kit-edge@latest"
-    pathe "^0.2.0"
-    tailvue "^0.1.30"
 
 "@tootallnate/once@2":
   version "2.0.0"
@@ -6672,11 +6663,6 @@ path-type@^4.0.0:
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-pathe@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/pathe/-/pathe-0.2.0.tgz"
-  integrity sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==
-
 pathe@^1.1.0, pathe@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/pathe/-/pathe-1.1.1.tgz"
@@ -8035,13 +8021,6 @@ svgo@^3.0.2:
     csso "^5.0.5"
     picocolors "^1.0.0"
 
-tailvue@^0.1.30:
-  version "0.1.68"
-  resolved "https://registry.npmjs.org/tailvue/-/tailvue-0.1.68.tgz"
-  integrity sha512-59F/5WXs+9u1dAir9pAfel0hp9PA616yA/4QaRUCxszSPVJSqv4qkvLhLSGqaTHQfndXmo1BORdyOOSJTUcIsg==
-  dependencies:
-    vue "^3.2.21"
-
 tailwind-config-viewer@^1.7.2:
   version "1.7.2"
   resolved "https://registry.npmjs.org/tailwind-config-viewer/-/tailwind-config-viewer-1.7.2.tgz"
@@ -8776,6 +8755,11 @@ vue-router@^4.1.0, vue-router@^4.2.5:
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
+vue-toastification@^2.0.0-rc.5:
+  version "2.0.0-rc.5"
+  resolved "https://registry.npmjs.org/vue-toastification/-/vue-toastification-2.0.0-rc.5.tgz"
+  integrity sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==
+
 vue-uuid@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/vue-uuid/-/vue-uuid-3.0.0.tgz"
@@ -8784,7 +8768,7 @@ vue-uuid@^3.0.0:
     "@types/uuid" "^8.3.4"
     uuid "^8.3.2"
 
-"vue@^2.6.14 || ^3.3.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.21, vue@^3.2.25, vue@^3.3.4, "vue@>= 3.0.0", "vue@>=2.7 || >=3", vue@>=3, vue@3.3.4:
+"vue@^2.6.14 || ^3.3.0", "vue@^2.7.0 || ^3.2.25", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.0.2, vue@^3.2.0, vue@^3.2.25, vue@^3.3.4, "vue@>= 3.0.0", "vue@>=2.7 || >=3", vue@>=3, vue@3.3.4:
   version "3.3.4"
   resolved "https://registry.npmjs.org/vue/-/vue-3.3.4.tgz"
   integrity sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==
