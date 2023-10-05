@@ -26,6 +26,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
     "pinia": "^2.1.6",
-    "pinia-plugin-persistedstate": "^3.2.0"
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "vue-uuid": "^3.0.0"
   }
 }

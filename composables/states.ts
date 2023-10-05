@@ -20,6 +20,7 @@ pinia.use(piniaPluginPersistedstate)
 //   })
 
   interface Job  {
+    id: any;
     name: string;
     url:string;
     salary:number;
@@ -52,6 +53,9 @@ pinia.use(piniaPluginPersistedstate)
         },
         techCount(state) {
             return state.jobs.filter(it => it.status === 'tech').length
+        },
+        currentJob(state) {
+            return (id : unknown) => state.jobs.filter(it => it.id === id)[0]
         }
     }
   })

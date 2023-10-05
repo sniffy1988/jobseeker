@@ -52,12 +52,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, unref } from 'vue';
+import { ref, unref, Ref } from 'vue';
+import { uuid } from 'vue-uuid';
 
 const name = ref('')
 const url = ref('');
 const salary = ref(0);
-const status = ref('');
+const status: Ref<'applied'| 'screening'| 'tech'| 'rejected'| 'offer'> = ref('applied');
 const note = ref('');
 
 const store = useJobStore();
@@ -75,6 +76,7 @@ const onSubmit = async (event: any) => {
   const results = await event
   if (results.valid) {
     store.add({
+      id: uuid.v1(),
       name: unref(name),
       url: unref(url),
       salary: unref(salary),

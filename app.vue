@@ -17,7 +17,7 @@
           </VBtn>
           <VBtn
             class="mr-2"
-            @click="navigateTo('/list')"
+            @click="navigateTo('/jobs')"
           >
             List
           </VBtn>
