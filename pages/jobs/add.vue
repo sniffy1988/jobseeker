@@ -13,6 +13,13 @@
         :rules="[rules.required]"
       />
       <v-text-field
+        id="role"
+        v-model="role"
+        name="role"
+        label="Role"
+        :rules="[rules.required]"
+      />
+      <v-text-field
         id="url"
         v-model="url"
         name="url"
@@ -56,10 +63,14 @@
 <script setup lang="ts">
 import { ref, unref, Ref } from 'vue';
 import { uuid } from 'vue-uuid';
+import { useToast } from 'tailvue'
+
+const $toast = useToast()
 
 const name = ref('')
 const url = ref('');
 const salary = ref(0);
+const role = ref('');
 const status: Ref<'applied'| 'screening'| 'tech'| 'rejected'| 'offer'> = ref('applied');
 const note = ref('');
 
@@ -82,13 +93,15 @@ const onSubmit = async (event: any) => {
       name: unref(name),
       url: unref(url),
       salary: unref(salary),
+      role: unref(role),
       status: unref(status),
-      note: unref(status),
+      note: unref(note),
       lastChanged: new Date(),
       dateApplication: new Date()
     });
 
     router.push('/');
+    $toast.success('Created job');
   }
 
 }

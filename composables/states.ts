@@ -26,6 +26,7 @@ pinia.use(piniaPluginPersistedstate)
     salary:number;
     status: 'applied'| 'screening'| 'tech'| 'rejected'| 'offer';
     note: string;
+    role: string;
     dateApplication: Date;
     lastChanged: Date;
   }
@@ -43,6 +44,12 @@ pinia.use(piniaPluginPersistedstate)
       add(payload:Job) {
         this.jobs.push(payload)
       },
+      deleteJob(id: unknown) {
+        this.jobs = this.jobs.filter(it => it.id !== id)
+      },
+      updateJob(payload: Job) {
+        this.jobs = this.jobs.map(it => it.id === payload.id ? payload : it)
+      }
     },
     getters: {
         count(state) {
