@@ -18,6 +18,7 @@
         name="url"
         label="Url of application"
         :rules="[rules.required]"
+        prefix="https://"
       />
       <v-text-field
         id="salary"
@@ -25,6 +26,7 @@
         name="salary"
         label="Salary"
         type="number"
+        prefix="$"
         :rules="[rules.required]"
       />
       <v-select
