@@ -14,6 +14,9 @@
         Applied on {{ job.dateApplication }}
       </p>
       <p class="mb-4">
+        Updated on {{ job.lastChanged }}
+      </p>
+      <p class="mb-4">
         Status: {{ job.status }}
       </p>
       <v-textarea
@@ -48,7 +51,7 @@ const $toast = useToast()
 const route = useRoute();
 const router = useRouter();
 const store = useJobStore();
-const job = store.currentJob(route.params.id);
+const job = ref(store.currentJob(route.params.id));
 
 const newNote = ref('');
 const onDeleteClick = () => {
@@ -59,15 +62,16 @@ const onDeleteClick = () => {
 
 const onUpdateClick = () => {
     store.updateJob({
-        ...job,
-        note: unref(newNote)
+        ...job.value,
+        note: unref(newNote),
+        lastChanged: new Date()
     });
     $toast.success('Updated job!');
-
+    job.value = store.currentJob(route.params.id);
 }
 
 onMounted(() => {
-    newNote.value = job.note;
+    newNote.value = job.value.note;
 })
 </script>
 
