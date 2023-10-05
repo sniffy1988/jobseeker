@@ -1,6 +1,7 @@
 <template>
   <v-container grid-list-lg>
     <v-form
+      ref="formRef"
       class="max-w-lg mx-auto"
       @submit.prevent="onSubmit"
     >
@@ -9,12 +10,14 @@
         v-model="name"
         name="name"
         label="Name of application"
+        :rules="[rules.required]"
       />
       <v-text-field
         id="url"
         v-model="url"
         name="url"
         label="Url of application"
+        :rules="[rules.required]"
       />
       <v-text-field
         id="salary"
@@ -22,11 +25,13 @@
         name="salary"
         label="Salary"
         type="number"
+        :rules="[rules.required]"
       />
       <v-select
         v-model="status"
         :items="statusItems"
         label="Status"
+        :rules="[rules.required]"
       />
       <v-textarea
         v-model="note"
@@ -47,23 +52,41 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, unref } from 'vue';
 
 const name = ref('')
 const url = ref('');
-const salary = ref('');
+const salary = ref(0);
 const status = ref('');
 const note = ref('');
 
+const store = useJobStore();
+const router = useRouter();
+
+const rules = {
+  required: (value: any) => !!value || 'Field is required',
+}
+
 const statusItems = ['applied', 'screening', 'tech', 'rejected', 'offer'];
 
-const isFormValid = computed(() => {
-    return false;
-})
-const onSubmit = () => {
-    if (isFormValid.value) {
-        console.log('save application entry')
-    }
+const formRef = ref(null);
+
+const onSubmit = async (event: any) => {
+  const results = await event
+  if (results.valid) {
+    store.add({
+      name: unref(name),
+      url: unref(url),
+      salary: unref(salary),
+      status: unref(status),
+      note: unref(status),
+      lastChanged: new Date(),
+      dateApplication: new Date()
+    });
+
+    router.push('/');
+  }
+
 }
 </script>
 
