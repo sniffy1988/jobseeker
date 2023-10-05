@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     '@vite-pwa/nuxt',
   ],
+  ssr: false,
   pinia: {
     autoImports: [
       // automatically imports `defineStore`
