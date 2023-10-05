@@ -63,7 +63,8 @@
 <script setup lang="ts">
 import { ref, unref, Ref } from 'vue';
 import { uuid } from 'vue-uuid';
-import { useToast } from "vue-toastification";
+import * as Toast from "vue-toastification/dist/index.mjs";
+const { useToast } = Toast
 const toast = useToast();
 
 
